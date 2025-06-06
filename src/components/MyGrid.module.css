@@ -2,7 +2,7 @@
   padding: 3rem;
   display: grid;
   gap: 3rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-template-rows: repeat(auto-fit, min-content);
 }
 
@@ -51,7 +51,7 @@
 }
 
 .aside {
-  grid-area: aside;
+  grid-area: asideleft;
   background-color: deeppink;
 
   @media (max-width: 1200px) {
@@ -59,7 +59,16 @@
   }
 }
 
+.aside2{
+  grif-area: asideright;
+
+}
+
 .footer {
   grid-area: footer;
   background-color: darkslateblue;
+}
+
+.footer2 {
+
 }
