@@ -60,7 +60,12 @@
 }
 
 .aside2{
-  grif-area: asideright;
+  grid-area: asideright;
+  background-color: aqua;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 
 }
 
@@ -70,5 +75,8 @@
 }
 
 .footer2 {
+
+  grid-area: footer;
+  background-color: darkslateblue;
 
 }
