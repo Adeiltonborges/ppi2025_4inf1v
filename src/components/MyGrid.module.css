@@ -7,10 +7,10 @@
 }
 
 .card {
-  height: 20rem;
+  height: 60rem;
   background-color: var(--primary-dark);
   color: var(--primary-contrast-light);
-  padding: 1rem;
+  
   border-radius: 1rem;
   box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
   font-size: 3rem;
@@ -79,4 +79,10 @@
   grid-area: footer;
   background-color: darkslateblue;
 
+}
+
+.main {
+  grid-area: main;
+  background-color: lightgray;
+  padding: 2rem;
 }

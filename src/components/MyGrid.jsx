@@ -10,23 +10,28 @@ export function MyGrid() {
       <div className={styles.main}>
         <div className={styles.grid}>
           <div className={styles.card}>
-            <h2>Card 1</h2>
+<img src="https://picsum.photos/200/300?random=1"></img>            
+            <h2>text0</h2>
             <p>This is the first card.</p>
           </div>
           <div className={styles.card}>
-            <h2>Card 2</h2>
+            <img src="https://picsum.photos/200/300?random=2"></img>
+            <h2>texto1</h2>
             <p>This is the second card.</p>
           </div>
           <div className={styles.card}>
-            <h2>Card 3</h2>
+            <img src="https://picsum.photos/200/300?random=3"></img>
+            <h2>text 2</h2>
             <p>This is the third card.</p>
           </div>
           <div className={styles.card}>
-            <h2>Card 4</h2>
+            <img src="https://picsum.photos/200/300?random=4"></img>
+            <h2>text 3</h2>
             <p>This is the fourth card.</p>
           </div>
           <div className={styles.card}>
-            <h2>Card 5</h2>
+            <img src="https://picsum.photos/200/300?random=9"></img>
+            <h2>text 4</h2>
             <p>This is the fifth card.</p>
           </div>
 
