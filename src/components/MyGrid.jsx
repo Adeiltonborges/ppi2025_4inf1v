@@ -12,27 +12,36 @@ export function MyGrid() {
           <div className={styles.card}>
 <img src="https://picsum.photos/200/300?random=1"></img>            
             <h2>text0</h2>
-            <p>This is the first card.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              </p>
+          </div>
+          <div className={styles.card}>
+            <img src="https://picsum.photos/200/300?random=1"></img>
+            <h2>text 0</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              </p>
           </div>
           <div className={styles.card}>
             <img src="https://picsum.photos/200/300?random=2"></img>
-            <h2>texto1</h2>
-            <p>This is the second card.</p>
+            <h2>text 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              </p>
           </div>
           <div className={styles.card}>
             <img src="https://picsum.photos/200/300?random=3"></img>
             <h2>text 2</h2>
-            <p>This is the third card.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+              </p>
           </div>
           <div className={styles.card}>
             <img src="https://picsum.photos/200/300?random=4"></img>
             <h2>text 3</h2>
-            <p>This is the fourth card.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
           </div>
           <div className={styles.card}>
             <img src="https://picsum.photos/200/300?random=9"></img>
             <h2>text 4</h2>
-            <p>This is the fifth card.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
           </div>
 
           <div className={styles.header1}>
@@ -40,9 +49,9 @@ export function MyGrid() {
             <p>header 1 </p>
           </div>
 
-          <div classname={styles.header2}>
-             <p>header 2</p>
-            </div> 
+          <div className={styles.header2}>
+            <p>header 2</p>
+          </div>
           
         </div>
       </div>
