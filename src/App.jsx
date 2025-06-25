@@ -1,15 +1,14 @@
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
-import "./styles/theme.css";
-import "./styles/global.css";
+import {LuckyNumber} from './components/LuckyNumber';
+import {Header} from './components/Header';
+import "styles/global.css";
+import "theme/global.css";
 
 export default function App() {
   return (
-    <div className="app-container">
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+    // react fragment
+    <>
+      <Header/>
+      <LuckyNumber />
+      </>
   );
 }
