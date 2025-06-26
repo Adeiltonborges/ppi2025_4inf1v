@@ -2,41 +2,52 @@ import { useState } from "react";
 import styles from "./LuckyNumber.module.css";
 
 export function LuckyNumber() {
-    // react hook - useState()
+  //REACT HOOK - useState()
+  const [luckyNumber, setLuckyNumber] = useState(0);
+  const [array, setArray] = useState([]);
+  const [message, setMessage] = useState("");
 
-    const  [luckyNumber, setLuckyNumber] = useState(0);
+  function handleClick() {
+    var n = Math.ceil(Math.random() * 31);
+    setLuckyNumber(n);
 
-  function handleClick() { 
-    setLuckyNumber(Math.ceil(Math.random() * 31)); 
-    console.log("Lucky number is now: " + luckyNumber);
-
-    if (array.includes(luckyNumber)) {
-      setMessage
+    if (array.includes(n)) {
+      setMessage(`o numero ${n} ja foi sorteado!`);
+    } else {
+      setMessage("");
+      setArray([...array, n]);
     }
+  }
 
-
-}
-  
-    return (
-     <div className={styles.container}>
-        {luckyNumber ? (
-            <h1> Lucky number = {luckyNumber} </h1>
-        ) : (
-            <h1>Lucky Number 🎲</h1>
-        )}
-
-       
+  return (
+    <div className={styles.container}>
+      {luckyNumber ? (
+        <h1>Lucky Number = {luckyNumber}</h1>
+      ) : (
+        <h1>Lucky Number 🎲</h1>
+      )}
+      <div className={styles.buttons}>
         <button className={styles.button} onClick={handleClick}>
-          Click me! 
-          </button> 
-          {Array.lenghth > 0 && (
-            <div>
-              <h3>lucky number array</h3>
-              <p>
-                [{array.toString()}]
-              </p>
-            </div>
-          )}
-     </div> 
+          sorteador
+        </button>
+        <button
+          className={styles.button}
+          onClick={() => {
+            setLuckyNumber(0);
+            setArray([]);
+            setMessage("");
+          }}
+        >
+          RESET 🔄
+        </button>
+      </div>
+      {message && <p>{message}</p>}
+      {array.length > 0 && (
+        <div>
+          <h3>Lucky Numbers Array:</h3>
+          <p>[{array.toString()}]</p>
+        </div>
+      )}
+    </div>
   );
 }
