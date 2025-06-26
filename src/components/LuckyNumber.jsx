@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./LuckyNumber.module.css";
 
-export default function LuckyNumber() {
+export function LuckyNumber() {
     // react hook - useState()
 
     const  [luckyNumber, setLuckyNumber] = useState(0);
@@ -9,6 +9,12 @@ export default function LuckyNumber() {
   function handleClick() { 
     setLuckyNumber(Math.ceil(Math.random() * 31)); 
     console.log("Lucky number is now: " + luckyNumber);
+
+    if (array.includes(luckyNumber)) {
+      setMessage
+    }
+
+
 }
   
     return (
@@ -23,6 +29,14 @@ export default function LuckyNumber() {
         <button className={styles.button} onClick={handleClick}>
           Click me! 
           </button> 
+          {Array.lenghth > 0 && (
+            <div>
+              <h3>lucky number array</h3>
+              <p>
+                [{array.toString()}]
+              </p>
+            </div>
+          )}
      </div> 
   );
 }

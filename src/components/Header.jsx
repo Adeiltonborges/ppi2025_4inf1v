@@ -1,7 +1,7 @@
 import styles from './Header.module.css';
 import { Brain  } from 'lucide-react';
 
-export default function Header() {
+export function Header() {
   return (
     <header className={styles.header}>
       <Brain  className={styles.icon} />
