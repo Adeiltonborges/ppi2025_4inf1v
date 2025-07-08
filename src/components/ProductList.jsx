@@ -49,7 +49,9 @@ useEffect(() => {
             <div>
                 <CircularProgress 
                 
-
+            thickness={5}
+            style={{ margin: "2rem auto", display: "block" }}
+            sx={{ color: "#001111" }}
 
                 />
                 <p>Loading products...</p>
