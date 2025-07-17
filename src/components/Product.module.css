@@ -1,20 +1,3 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  gap: 2rem;
-  back-color: purple;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 1200px;
-}
-
 .card {
   display: flex;
   flex-direction: column;

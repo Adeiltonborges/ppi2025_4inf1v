@@ -1,6 +1,8 @@
+// ProductList.jsx
 import React, { useEffect, useState } from 'react';
 import styles from './ProductList.module.css';
 import { CircularProgress } from '@mui/material';
+import { Product } from './Product';
 
 export function ProductList() {
   const category = 'smartphones';
@@ -53,26 +55,11 @@ export function ProductList() {
 
       <div className={styles.grid}>
         {products.map(product => (
-          <div key={product.id} className={styles.card}>
-            <img
-              src={product.thumbnail}
-              alt={product.title}
-              className={styles.image}
-            />
-            <div className={styles.info}>
-              <h2 className={styles.title}>{product.title}</h2>
-              <p className={styles.description}>{product.description}</p>
-              <div className={styles.footer}>
-                <span className={styles.price}>${product.price}</span>
-                <button
-                  className={styles.button}
-                  onClick={() => handleAddToCart(product)}
-                >
-                  Adicionar ao Carrinho
-                </button>
-              </div>
-            </div>
-          </div>
+          <Product
+            key={product.id}
+            product={product}
+            onAddToCart={handleAddToCart}
+          />
         ))}
       </div>
     </div>
