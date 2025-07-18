@@ -1,27 +1,17 @@
-import React from 'react';
-import styles from './Product.module.css';
+import styles from "./Product.module.css";
 
-export function Product({ product, onAddToCart }) {
+export function Product({ product, addToCart }) {
   return (
-    <div className={styles.card}>
+    <div key={product.id} className={styles.productCard}>
       <img
         src={product.thumbnail}
         alt={product.title}
-        className={styles.image}
+        className={styles.productImage}
       />
-      <div className={styles.info}>
-        <h2 className={styles.title}>{product.title}</h2>
-        <p className={styles.description}>{product.description}</p>
-        <div className={styles.footer}>
-          <span className={styles.price}>${product.price}</span>
-          <button
-            className={styles.button}
-            onClick={() => onAddToCart(product)}
-          >
-            Adicionar ao Carrinho
-          </button>
-        </div>
-      </div>
+      <h2 className={styles.productTitle}>{product.title}</h2>
+      <p className={styles.productDescription}>{product.description}</p>
+      <p className={styles.productPrice}>${product.price}</p>
+      <button onClick={() => addToCart(product)} className={styles.productButton}>ADD TO CART</button>
     </div>
   );
 }

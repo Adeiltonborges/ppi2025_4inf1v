@@ -1,21 +1,27 @@
-.header {
+.container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  background: linear-gradient(to bottom, #0f172a, #1e293b);
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 5rem;
+  background-color: var(--primary-dark);
+}
+.container h1 {
+  font-size: 5rem;
+  font-weight: bolder;
+}
+.containerImg img {
+  height: auto;
+  width: 100%;
+  max-width: 20rem;
+}
+
+.cartInfo {
+  border-radius: 3rem;
+  background-color: var(--primary-light);
+  color: var(--primary-contrast-dark);
   padding: 2rem;
-  color: white;
-}
-
-.icon {
-  width: 40px;
-  height: 40px;
-  color: #3b82f6;
-  margin-bottom: 1rem;
-}
-
-.title {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
-  color: #3b82f6;
+  text-align: center;
 }

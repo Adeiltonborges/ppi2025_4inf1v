@@ -1,11 +1,13 @@
-import styles from './Header.module.css';
-import { Brain  } from 'lucide-react';
+import styles from "./Header.module.css";
 
-export function Header() {
+export function Header({ cart }) {
   return (
-    <header className={styles.header}>
-      <Brain  className={styles.icon} />
-      <h1 className={styles.title}>Foco, Força, Fé e Disciplina</h1>
-    </header>
+    <div className={styles.container}>
+      <h1>TJA Megastore</h1>
+      <div className={styles.cartInfo}>
+        {cart.length > 0 && <p>{cart.length} products</p>}
+        <p>Total: $ {cart.reduce((total, product) => total + product.price, 0).toFixed(2)}</p>
+      </div>
+    </div>
   );
 }
