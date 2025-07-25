@@ -4,12 +4,12 @@
   justify-content: space-between;
   gap: 3rem;
   padding: 5rem;
-  background-color: #1976d2; /* azul mais claro */
+  background-color: #43a047; /* verde mais claro */
 }
 .container h1 {
   font-size: 5rem;
   font-weight: bolder;
-  color: #b30000;
+  color: #111; /* preto */
 }
 .containerImg img {
   height: auto;
@@ -19,8 +19,8 @@
 
 .cartInfo {
   border-radius: 3rem;
-  background-color: var(--primary-light);
-  color: var(--primary-contrast-dark);
+  background-color: #111; /* preto */
+  color: #fff; /* branco */
   padding: 2rem;
   font-size: 3rem;
   font-weight: bold;

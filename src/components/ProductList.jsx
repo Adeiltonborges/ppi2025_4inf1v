@@ -1,37 +1,47 @@
-import { useEffect, useState } from "react";
 import styles from "./ProductList.module.css";
 import { CircularProgress } from "@mui/material";
 import { Product } from "./Product";
+import { useContext, useRef, useState } from "react";
+import { CartContext } from "../service/CartContext";
 
-export function ProductList({ addToCart }) {
-  var category = "smartphones";
-  var limit = 10;
-  var apiUrl = `https://dummyjson.com/products/category/${category}?limit=${limit}&select=id,thumbnail,title,price,description`;
+export function ProductList() {
+  const { products, loading, error } = useContext(CartContext);
+  const searchInput = useRef(null);
+  const [search, setSearch] = useState("");
 
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const handleSearch = () => {
+    const query = searchInput.current.value.toLowerCase();
+    setSearch(query);
+  };
 
-  useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        setProducts(data.products);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchProducts();
-  }, []);
+  const handleClear = () => {
+    searchInput.current.value = "";
+    setSearch("");
+  };
+
+  const filteredProducts = products.filter(
+    (product) =>
+      product.title.toLowerCase().includes(search) ||
+      product.description.toLowerCase().includes(search)
+  );
 
   return (
     <div className={styles.container}>
+      <div className={styles.searchContainer}>
+        <input
+          ref={searchInput}
+          type="text"
+          placeholder="Search for products..."
+          className={styles.searchInput}
+          onChange={handleSearch}
+        />
+        <button className={styles.searchButton} onClick={handleClear}>
+          Clear
+        </button>
+      </div>
       <div className={styles.productList}>
-        {products.map((product) => (
-          <Product key={product.id} product={product} addToCart={addToCart} />
+        {filteredProducts.map((product) => (
+          <Product key={product.id} product={product} />
         ))}
       </div>
       {loading && (
