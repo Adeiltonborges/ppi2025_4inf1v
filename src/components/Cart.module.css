@@ -10,11 +10,13 @@
 .cart h2 {
   font-size: 4rem;
   font-weight: bolder;
+  color: white
 }
 
 .cart p {
   font-size: 2rem;
   color: var(--primary-contrast-dark);
+  color: white
 }
 
 .cartItem {
