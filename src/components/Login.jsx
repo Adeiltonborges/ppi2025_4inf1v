@@ -90,7 +90,7 @@ export function Login({ value }) {
     e.preventDefault();
 
     // Basic validation
-    // todo: buscar por regexp
+    // TODO: Buscar por REGEXP 
     const newErrors = {};
     if (!formValues.email) newErrors.email = "Email is required";
     if (!formValues.password) newErrors.password = "Password is required";
