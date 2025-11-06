@@ -10,13 +10,11 @@
 .cart h2 {
   font-size: 4rem;
   font-weight: bolder;
-  color: white
 }
 
 .cart p {
   font-size: 2rem;
   color: var(--primary-contrast-dark);
-  color: white
 }
 
 .cartItem {
@@ -74,4 +72,13 @@
 .quantityControls span {
   font-size: 2rem;
   margin: 0 2rem;
-}   
+}
+
+.removeButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-dark);
+  font-size: 2.5rem;
+  margin-left: 2rem;
+}

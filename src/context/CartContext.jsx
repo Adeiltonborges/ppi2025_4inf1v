@@ -29,7 +29,7 @@ export function CartProvider({ children }) {
 
   useEffect(() => {
     async function fetchProductsSupabase() {
-      const { data, error } = await supabase.from("product_2v").select();
+      const { data, error } = await supabase.from("product").select();
       if (error) {
         setError(`Fetching products failed! ${error.message}`);
       } else {
@@ -91,6 +91,24 @@ export function CartProvider({ children }) {
   const [sessionLoading, setSessionLoading] = useState(false);
   const [sessionMessage, setSessionMessage] = useState(null);
   const [sessionError, setSessionError] = useState(null);
+
+  useEffect(() => {
+    // verifica se tem sessao no supabse
+    async function getSession() {
+      const { data: { session }, } = await supabase.auth.getSession();
+      setSession(session || null);
+    }
+    getSession();
+
+    // escuta mudancas na sessao
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session || null);
+    });
+
+
+    return () => subscription.unsubscribe();
+  
+  }, []);
 
   async function handleSignUp(email, password, username) {
     setSessionLoading(true);

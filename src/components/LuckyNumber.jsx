@@ -12,7 +12,7 @@ export function LuckyNumber() {
     setLuckyNumber(n);
 
     if (array.includes(n)) {
-      setMessage(`o numero ${n} ja foi sorteado!`);
+      setMessage(`The number ${n} is already picked!`);
     } else {
       setMessage("");
       setArray([...array, n]);
@@ -28,7 +28,7 @@ export function LuckyNumber() {
       )}
       <div className={styles.buttons}>
         <button className={styles.button} onClick={handleClick}>
-          sorteador
+          I'm feeling lucky today!
         </button>
         <button
           className={styles.button}

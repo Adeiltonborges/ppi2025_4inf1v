@@ -7,10 +7,10 @@
 }
 
 .card {
-  height: 60rem;
+  height: 20rem;
   background-color: var(--primary-dark);
   color: var(--primary-contrast-light);
-  
+  padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
   font-size: 3rem;
@@ -51,7 +51,7 @@
 }
 
 .aside {
-  grid-area: asideleft;
+  grid-area: aside;
   background-color: deeppink;
 
   @media (max-width: 1200px) {
@@ -59,30 +59,7 @@
   }
 }
 
-.aside2{
-  grid-area: asideright;
-  background-color: aqua;
-
-  @media (max-width: 1200px) {
-    display: none;
-  }
-
-}
-
 .footer {
   grid-area: footer;
   background-color: darkslateblue;
-}
-
-.footer2 {
-
-  grid-area: footer;
-  background-color: darkslateblue;
-
-}
-
-.main {
-  grid-area: main;
-  background-color: lightgray;
-  padding: 2rem;
 }
