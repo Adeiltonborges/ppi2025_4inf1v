@@ -19,6 +19,7 @@ export function SessionProvider({ children }) {
   const [sessionError, setSessionError] = useState(null);
 
   // ✅ Verifica sessão inicial e escuta mudanças (login/logout)
+  
   useEffect(() => {
     async function loadSession() {
       try {
