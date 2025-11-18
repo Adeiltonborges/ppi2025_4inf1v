@@ -18,7 +18,7 @@ export function SessionProvider({ children }) {
   const [sessionMessage, setSessionMessage] = useState(null);
   const [sessionError, setSessionError] = useState(null);
 
-  // ✅ Verifica sessão inicial e escuta mudanças (login/logout)
+  // Verifica sessão inicial e escuta mudanças (login/logout)
   
   useEffect(() => {
     async function loadSession() {
@@ -48,7 +48,7 @@ export function SessionProvider({ children }) {
     return () => subscription.unsubscribe();
   }, []);
 
-  // ✅ Criação de conta
+  // Criação de conta
   async function handleSignUp(email, password, username) {
     setSessionLoading(true);
     setSessionError(null);
@@ -79,7 +79,7 @@ export function SessionProvider({ children }) {
     }
   }
 
-  // ✅ Login
+  //  Login
   async function handleSignIn(email, password) {
     setSessionLoading(true);
     setSessionError(null);
@@ -107,7 +107,7 @@ export function SessionProvider({ children }) {
     }
   }
 
-  // ✅ Logout
+  //  Logout
   async function handleSignOut() {
     setSessionLoading(true);
     setSessionError(null);

@@ -1,7 +1,7 @@
 
 :root[data-theme="light"] {
-  --primary: #f49097;
-  --primary-light: #fcd6da;
+  --primary: #6ca4ee;
+  --primary-light: #9fc3ec;
   --primary-dark: #a04e56;
   --primary-contrast: #111;
   --background: #fff;
@@ -19,8 +19,8 @@
 }
 
 :root[data-theme="dark"] {
-  --primary: #f49097;
-  --primary-light: #a04e56;
+  --primary: #1100ff;
+  --primary-light: #5f69f5;
   --primary-dark: #fcd6da;
   --primary-contrast: #fff;
   --background: #1a1a1a;

@@ -27,7 +27,7 @@ export function User() {
   );
 }
 
-/* ---------- Regular user view ---------- */
+/* ---- Regular user view ---- */
 function RegularUser({ session, onSignOut }) {
   return (
     <>
@@ -53,7 +53,7 @@ function RegularUser({ session, onSignOut }) {
   );
 }
 
-/* ---------- Admin product manager ---------- */
+/* ---- Admin product manager ---- */
 function AdminProductManager({ session, onSignOut }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);

@@ -24,7 +24,7 @@ export function CartProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // 🔹 Buscar produtos (reutilizável)
+  // Buscar produtos (reutilizável)
   async function fetchProducts() {
     setLoading(true);
     const { data, error } = await supabase.from("product").select();
@@ -33,18 +33,18 @@ export function CartProvider({ children }) {
     setLoading(false);
   }
 
-  // 🔹 Carregar produtos na montagem + realtime listener
+  // Carregar produtos na montagem + realtime listener
   useEffect(() => {
     fetchProducts();
 
-    // 🟢 Escuta em tempo real: insert, update e delete na tabela "product"
+    // Escuta em tempo real: insert, update e delete na tabela "product"
     const channel = supabase
       .channel("realtime-products")
       .on(
         "postgres_changes",
         { event: "*", schema: "public", table: "product" },
         () => {
-          fetchProducts(); // Recarrega produtos automaticamente
+          fetchProducts(); 
         }
       )
       .subscribe();
@@ -54,7 +54,7 @@ export function CartProvider({ children }) {
     };
   }, []);
 
-  // 🔹 Carregar carrinho do usuário autenticado
+  // Carregar carrinho do usuário logado
   useEffect(() => {
     if (!session) {
       setCart([]);
@@ -82,7 +82,7 @@ export function CartProvider({ children }) {
     fetchCart();
   }, [session]);
 
-  // 🔹 Adicionar produto ao carrinho
+  // Adicionar produto ao carrinho
   async function addToCart(product) {
     if (!session) {
       alert("Sign in first!");
@@ -102,7 +102,7 @@ export function CartProvider({ children }) {
     }
   }
 
-  // 🔹 Atualizar quantidade no carrinho
+  // Atualizar quantidade no carrinho
   async function updateQtyCart(productId, qty) {
     if (!session) return;
     const { error } = await supabase
@@ -116,7 +116,7 @@ export function CartProvider({ children }) {
       );
   }
 
-  // 🔹 Remover item do carrinho
+  // Remover item do carrinho
   async function removeFromCart(productId) {
     if (!session) return;
     await supabase
@@ -127,26 +127,26 @@ export function CartProvider({ children }) {
     setCart((prev) => prev.filter((i) => i.id !== productId));
   }
 
-  // 🔹 Limpar carrinho
+  // Limpar carrinho
   async function clearCart() {
     if (!session) return;
     await supabase.from("cart").delete().eq("user_id", session.user.id);
     setCart([]);
   }
 
-  // 🔹 Admin: adicionar novo produto
+  // Admin: adicionar novo produto
   async function addProduct(newProduct) {
     const { error } = await supabase.from("product").insert(newProduct);
     if (error) setError(error.message);
   }
 
-  // 🔹 Admin: atualizar produto existente
+  // Admin: atualizar produto existente
   async function updateProduct(id, updates) {
     const { error } = await supabase.from("product").update(updates).eq("id", id);
     if (error) setError(error.message);
   }
 
-  // 🔹 Admin: deletar produto
+  // Admin: deletar produto
   async function deleteProduct(id) {
     const { error } = await supabase.from("product").delete().eq("id", id);
     if (error) setError(error.message);
